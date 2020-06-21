@@ -7,6 +7,7 @@ plugins {
 group = 'jp.aizuwakamatsu-idpayment'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+targetCompatibility = '11'
 
 configurations {
 	compileOnly {
@@ -38,3 +39,9 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+apply plugin:'war'
+war {
+        enabled = true
+        archiveName 'sample.war'
+    }
