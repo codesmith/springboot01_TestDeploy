@@ -1,6 +1,6 @@
 package jp.aizuwakamatsuidpayment.demo.trySpring;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +16,8 @@ public class HelloController {
   // DIコンテナがやっていること 1. インスタンスの生成 2. インスタンスのライフサイクル管理
   // ⇒クラスをnewしたり、使い終わった変数にnullを入れる必要が無くなる
   // ⇒nullの入れ忘れを防止できたり、コードの可読性が上がる
-  @Autowired
-  private HelloService helloService;
+  // @Autowired
+  // private HelloService helloService;
 
   /**
    * GET用の処理.
@@ -51,31 +51,31 @@ public class HelloController {
     return "helloResponse";
   }
 
-  /**
-   * POST用の処理（DB）.
-   */
-  // @RequestParam
-  // ：メソッドの引数に付けることで画面からの入力内容を受け取ることができる
-  // ：アノテーションの引数にはhtmlのname属性の値を指定する
-  // ①遷移前ページから受け取ったtext2の情報をこのメソッド(postDbRequest)内で処理
-  // ②このメソッド(postDbRequest)のreturnとして遷移先ページを指定する
-  // ③遷移先ページに渡す情報はmodelにaddAttributeメソッドで仕込んでおく
-  @PostMapping("/hello/db")
-  public String postDbRequest(@RequestParam("text2") String str, Model model) {
+  // /**
+  // * POST用の処理（DB）.
+  // */
+  // // @RequestParam
+  // // ：メソッドの引数に付けることで画面からの入力内容を受け取ることができる
+  // // ：アノテーションの引数にはhtmlのname属性の値を指定する
+  // // ①遷移前ページから受け取ったtext2の情報をこのメソッド(postDbRequest)内で処理
+  // // ②このメソッド(postDbRequest)のreturnとして遷移先ページを指定する
+  // // ③遷移先ページに渡す情報はmodelにaddAttributeメソッドで仕込んでおく
+  // @PostMapping("/hello/db")
+  // public String postDbRequest(@RequestParam("text2") String str, Model model) {
 
-    // Stringからint型に変換
-    int id = Integer.parseInt(str);
+  // // Stringからint型に変換
+  // int id = Integer.parseInt(str);
 
-    // １件検索
-    Employee employee = helloService.findOne(id);
+  // // １件検索
+  // Employee employee = helloService.findOne(id);
 
-    // 検索結果をModelに登録
-    // 検索結果をmodelオブジェクトに登録しておくことで画面側で受け取ることができるようになる
-    model.addAttribute("id", employee.getEmployeeId());
-    model.addAttribute("name", employee.getEmployeeName());
-    model.addAttribute("age", employee.getAge());
+  // // 検索結果をModelに登録
+  // // 検索結果をmodelオブジェクトに登録しておくことで画面側で受け取ることができるようになる
+  // model.addAttribute("id", employee.getEmployeeId());
+  // model.addAttribute("name", employee.getEmployeeName());
+  // model.addAttribute("age", employee.getAge());
 
-    // helloResponseDB.htmlに画面遷移
-    return "helloResponseDB";
-  }
+  // // helloResponseDB.htmlに画面遷移
+  // return "helloResponseDB";
+  // }
 }
