@@ -1,4 +1,4 @@
-package com.example.demo.trySpring;
+package jp.aizuwakamatsuidpayment.demo.trySpring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

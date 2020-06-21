@@ -1,4 +1,4 @@
-package com.example.demo.trySpring;
+package jp.aizuwakamatsuidpayment.demo.trySpring;
 
 import java.util.Map;
 
